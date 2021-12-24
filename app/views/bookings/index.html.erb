@@ -43,7 +43,6 @@
               <th>Price</th>
               <th>Status</th>
               <th>Edit booking time</th>
-              <th>Leave a review</th>
             </tr>
             <% current_user.bookings.order("start_time ASC").each do |booking| %>
             <tr>

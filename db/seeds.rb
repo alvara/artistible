@@ -18,12 +18,12 @@ p 'generating fake users'
 # batch_doc = Nokogiri::HTML(batch)
 
 # batch_doc.search('.col-12').each do |student|
-#   User.create(name: student.search('strong').text,
-#               email: 'test@test.com',
-#               summary: 'I am a student who does Murals on the weekends.',
-#               password: 'password',
-#               artist: [true, false].sample,
-#               bio: Faker::Lorem.sentence)
+  User.create(name: "Jesse",
+              email: 'jesse@lewagon.com',
+              summary: 'I am a student who does Murals on the weekends.',
+              password: 'password',
+              artist: [true, false].sample,
+              bio: Faker::Lorem.sentence)
 # end
 
 15.times do

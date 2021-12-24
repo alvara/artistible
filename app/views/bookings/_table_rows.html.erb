@@ -8,9 +8,8 @@
 <% if booking.user.photo.attached? %>
   <td> <%= cl_image_tag booking.user.photo.key, class: "avatar" %>
 <% else %>
- <td><img src="http://placehold.jp/50x50.png", class="avatar">
+ <td>
 <% end %>
-<br>
 <%=booking.user.name.capitalize %></td>
 <td><%= booking.start_time.to_formatted_s(:short) %> </td>
 <td><%= booking.end_time.to_formatted_s(:short) %> </td>
