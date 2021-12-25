@@ -44,7 +44,7 @@
   <td>
     <%# if DateTime.now > booking.end_time commented for demo purposes %>
       <% if booking.review %>
-        <%= link_to 'Edit Review', edit_booking_review_path(booking, booking.review), class: "btn btn-warning" %>
+        <%= link_to 'Edit Review', edit_booking_review_path(booking, booking.review), class: "modern-button btn warning" %>
       <% else %>
         <%= link_to 'Review Service', new_booking_review_path(booking), class: "btn btn-success"  %>
       <% end %>

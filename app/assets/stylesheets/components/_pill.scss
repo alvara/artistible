@@ -25,6 +25,11 @@
     text-decoration: none;
     background-color: #8f1775;
   }
+
+  &.warning {
+    background-color: orange;
+    border-color: orange;
+  }
 }
 
 .inverse-modern-button {

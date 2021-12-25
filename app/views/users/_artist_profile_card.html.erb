@@ -1,17 +1,22 @@
-<div class="artist-card">
   <% if artist.photo.attached? %>
-    <img src= <%="#{cl_image_path(artist.photo.key)}"%> alt="place" style="width:125px">
+    <img src= <%="#{cl_image_path(artist.photo.key)}"%> alt="place" class="rounded-circle w-100">
   <% else %>
     <img src= <%= asset_path "logo.png"%> style="width:125px">
   <% end %>
-  <h2 class="name-title"><%= artist.name %></h2>
-  <h4 class="location-title"><%= artist.address ? artist.address : "Location Unknown" %></h4>
-  <div>
-    <p class="card-rating"><i class="star fas fa-star" style="color: gold; text-shadow: 1px 1px 0px black;"><%= artist.average_rating %></i></p>
-    <p>My Services:</p>
-    <%# TODO: These are hard coded, fix this later %>
-    <% find_unique_categories(artist).each do |category| %>
-      <h3 class="modern-badge"><%= category %></h3>
-    <% end  %>
-  </div>
-</div>
+  <h2><%= artist.name %></h2>
+  <p><%= @artist.summary %></p>
+
+  <h4 class="location-title"><%= artist.address ? artist.address : "test" %></h4>
+   
+
+  <% find_unique_categories(artist).each do |category| %>
+    <h3 class="modern-badge"><%= category %></h3>
+  <% end  %>
+
+<h4>Review</h4>
+<% if current_user.reviews.present? %>
+  <%= render "bookings/reviews", review: current_user.reviews.first%>
+<% else %>
+  <p>No reviews yet</p>
+<% end %>
+

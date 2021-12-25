@@ -1,41 +1,24 @@
-<div class="container d-flex">
-  <div class="row pt-2">
-    <div class="col-9">
-      <div class="d-flex pb-3">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    
+    <div class="simple-card p-3 mt-5 rounded-lg">
         <%= render "artist_profile_card", artist: @artist %>
-        <div class="p-4">
-          <header class="shadow p-3 mb-5 bg-white rounded">
-            <h1>Artist Bio:</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum illo id iusto provident libero, debitis unde culpa inventore sed nam voluptatem ex laboriosam ipsam exercitationem aut maiores quos, facilis impedit?</p>
-          </header>
-        </div>
-      </div>
-      <div>
+    </div>
+    
+    </div>
+    <div class="col-sm-8">
+      <div class="">
         <% current_tags = find_unique_categories(@artist) %>
         <% @tags.each do |tag| %>
-          <div>
-            <% if current_tags.include? tag %>
-              <h2 class="d-flex justify-content-center"><span class="badge badge-pill badge-light" style="background-color: #DAA5CF;" id="<%= tag %>"><%= tag.capitalize %></span></h2>
-            <% end %>
-          </div>
+     
           <% @artist.services.where(category: tag).each do |service| %>
-            <div class="booking-card-product">
+            <div class="booking-card-product simple-card p-3 mt-5 rounded-lg">
               <%=render 'artist_show_card', service: service %>
-              <%# #TODO: remove non existent tags %>
             </div>
           <% end %>
         <% end %>
       </div>
-    </div>
-    <div class="col-3">
-      <header class="shadow p-3 mt-4 bg-white rounded">
-        <h2>Latest review</h2>
-        <% if current_user.reviews.present? %>
-          <%= render "bookings/reviews", review: current_user.reviews.first%>
-        <% else %>
-          <p>No review</p>
-        <% end %>
-      </header>
     </div>
   </div>
 </div>
