@@ -27,7 +27,7 @@
 <div align="center">
   <h1 align="center">Artistible</h1>
   
-  <img src="preview.png" width="250">
+  <img src="preview.png" width="450">
   <br />
 
   <strong align="center">
@@ -41,7 +41,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Learn More
-You can find more in depth information about the development of this project [here](https://jessealvarado.com/portfolio/artistible)
+You can learn more details about the purpose and development of this project [here](https://jessealvarado.com/portfolio/artistible)
 
 ## Built With
 
